@@ -1,0 +1,4 @@
+{
+  "sonarlint.pathToCompileCommands": "${workspaceFolder}/compile_commands.json",
+  "makefile.preConfigureScript": "${workspaceFolder}/scripts/configure.sh"
+}

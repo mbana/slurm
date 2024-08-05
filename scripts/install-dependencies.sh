@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+sudo apt-get -qq update
+sudo apt-get -qq install -y --no-install-recommends \
+    adcli \
+    autoconf \
+    automake \
+    autotools-dev \
+    build-essential \
+    bzip2 \
+    ca-certificates \
+    curl \
+    dialog \
+    environment-modules \
+    git \
+    gettext-base \
+    gnupg \
+    gpg \
+    hwloc \
+    iputils-ping \
+    krb5-user \
+    less \
+    libdbus-1-dev \
+    libhttp-parser-dev \
+    libhttp-parser2.9 \
+    libhwloc-dev \
+    libjansson-dev \
+    libjson-c5 \
+    libjson-c-dev \
+    liblua5.3-dev \
+    liblz4-dev \
+    libmunge-dev \
+    libmysqlclient-dev \
+    libnss-sss \
+    libnuma-dev \
+    libnuma1 \
+    libpam-sss \
+    libpam0g-dev \
+    libpci-dev \
+    libpmi2-0 \
+    libpmi2-0-dev \
+    libpmix-dev \
+    libreadline-dev \
+    libsecret-1-0 \
+    libssl-dev \
+    libsubunit0 \
+    libtool \
+    libyaml-0-2 \
+    libyaml-dev \
+    linux-headers-generic-hwe-$(cat /etc/os-release | grep -oP "(?<=VERSION_ID=\").*(?=\")") \
+    lua-sec \
+    lua5.3 \
+    lua5.3-dev \
+    munge \
+    net-tools \
+    numactl \
+    pkg-config \
+    realmd \
+    tini \
+    unzip \
+    xz-utils \
+    libjwt-dev \
+    libasan8 clang libc++-dev clang-tools-12 clang-tools
