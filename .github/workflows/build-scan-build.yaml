@@ -1,0 +1,27 @@
+name: build-scan-build
+on:
+  push:
+    branches: [mbana/slurm-24.05]
+  # push:
+  #   branches: [$default-branch]
+  # pull_request:
+  #   branches: [$default-branch]
+env:
+  TERM: "xterm-256color"
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: install-dependencies
+        run: ./scripts/install-dependencies.sh
+      - name: configure
+        run: CC="$(which clang)" CFLAGS="-fdiagnostics-color=always" ./scripts/configure.sh
+      - name: scan-build-make
+        run: scan-build make -j $(nproc)
+      - name: scan-build-contrib
+        run: scan-build make -j $(nproc) contrib
+      # - name: make check
+      #   run: make check
+      # - name: make distcheck
+      #   run: make distcheck
